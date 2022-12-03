@@ -1,0 +1,426 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:wght@300;400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="dist/style.css" />
+        <title>Page produit</title>
+    </head>
+    <body class="unablescroll">
+        <!-- ----------Mini slider sur le texte------- -->
+        <div class="slidetext">
+            <div class="slidetextcontainer container">
+                <p class="slidetext__first">Bénéficiez de 30% de réduction</p>
+                <p class="slidetext__second">
+                    <span> sur tous vos achats de plus de 100.000FCFA</span>
+                </p>
+            </div>
+        </div>
+
+        <!-- ----------Le menu------- -->
+        <header class="header">
+            <div class="header__container container">
+                <img
+                    src="img/logo11.png"
+                    class="header__logo"
+                    alt="logo de l'entreprise"
+                />
+
+                <nav class="header__nav">
+                    <ul class="header__list">
+                        <li>
+                            <a href="#" class="header__link">Nos produits</a>
+                        </li>
+                        <li><a href="#" class="header__link">Nouveautés</a></li>
+                        <li><a href="#" class="header__link">FAQ</a></li>
+                        <li><a href="#" class="header__link">Contact</a></li>
+                    </ul>
+                </nav>
+
+                <div class="header__icon">
+                    <ion-icon name="search-outline"></ion-icon>
+                    <ion-icon name="person-outline"></ion-icon>
+                    <ion-icon name="bag-handle-outline"></ion-icon>
+                    <ion-icon name="heart-outline" class="hide"></ion-icon>
+                    <ion-icon name="star-outline" class="hide"></ion-icon>
+        
+                </div>
+
+                <div class="togglemenu">
+                    <ion-icon
+                        name="menu-outline"
+                        class="togglemenu__open"
+                    ></ion-icon>
+                    <ion-icon
+                        name="close-outline"
+                        class="togglemenu__close"
+                    ></ion-icon>
+                </div>
+            </div>
+        </header>
+        <main>
+            <!-- ----------Partie présentation du produit------- -->
+            <section class="product container">
+                <img src="img/but2.png" alt="" class="backimg" />
+                <div class="product__gallery">
+                    <div>
+                        <img
+                            src="img/maillotvert.png"
+                            alt="Maillot bleu"
+                            class="product__gallery__img"
+                            onclick="currentSlide(1)"
+                        />
+                    </div>
+                    <div>
+                        <img
+                            src="img/maillotrouge.png"
+                            alt="Maillot blanc"
+                            class="product__gallery__img"
+                            onclick="currentSlide(2)"
+                        />
+                    </div>
+                    <div>
+                        <img
+                            src="img/maillotjaune.jpg"
+                            alt="Maillot gris"
+                            class="product__gallery__img"
+                            onclick="currentSlide(3)"
+                        />
+                    </div>
+                    <div>
+                        <img
+                            src="img/maillotblanc.png"
+                            alt="Maillot marron"
+                            class="product__gallery__img"
+                            onclick="currentSlide(4)"
+                        />
+                    </div>
+                    <div>
+                        <img
+                            src="img/maillotnoir.jpg"
+                            alt="Maillot vert"
+                            class="product__gallery__img"
+                            onclick="currentSlide(5)"
+                        />
+                    </div>
+                    <!-- <div>
+                    <img
+                        src="img/pullroseclair.png"
+                        alt="pull rose"
+                        class="product__gallery__img"
+                        onclick="currentSlide(6)"
+                    />
+                </div> -->
+                </div>
+                <div class="product__slider">
+                    <div class="product__slider__item">
+                        <img
+                            src="img/maillotvert.png"
+                            id="myimage1"
+                            alt="Maillot bleu"
+                        />
+                        <!-- <div class="img-magnifier-glass"></div> -->
+                    </div>
+                    <div class="product__slider__item">
+                        <img
+                            src="img/maillotrouge.png"
+                            id="myimage2"
+                            alt="Maillot blanc"
+                        />
+                    </div>
+                    <div class="product__slider__item">
+                        <img
+                            src="img/maillotjaune.jpg"
+                            id="myimage3"
+                            alt="Maillot gris"
+                        />
+                    </div>
+                    <div class="product__slider__item">
+                        <img
+                            src="img/maillotblanc.png"
+                            id="myimage4"
+                            alt="Maillot marron"
+                        />
+                    </div>
+                    <div class="product__slider__item">
+                        <img
+                            src="img/maillotnoir.jpg"
+                            id="myimage5"
+                            alt="Maillot vert"
+                        />
+                    </div>
+                    <!-- <div class="product__slider__item">
+                    <img src="img/pullroseclair.png" alt="pull rose" />
+                </div> -->
+
+                    <a class="btn__prev" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="btn__next" onclick="plusSlides(1)">&#10095;</a>
+                </div>
+                <div class="product__info">
+                    <div class="product__info__icon">
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                    </div>
+                    <h1 class="product__info__title">
+                        Maillot Home (Domicile) PRO – Lions Indomptables One All
+                        Sports
+                    </h1>
+                    <ul class="product__info__category">
+                        <li>Sport</li>
+                        <li>Mixte</li>
+                        <li>Mixte</li>
+                    </ul>
+                    <div class="product__info__price">
+                        <span>54500FCFA</span>
+                        <span>35500FCFA</span>
+                    </div>
+                    <div class="product__info__color">
+                        <h3 class="product__info__subtitle">Couleurs</h3>
+                        <div class="product__info__color__container">
+                            <span
+                                class="product__info__color--vert activecolor"
+                                onclick="currentSlide(1)"
+                            ></span>
+                            <span
+                                class="product__info__color--rouge"
+                                onclick="currentSlide(2)"
+                            ></span>
+                            <span
+                                class="product__info__color--jaune"
+                                onclick="currentSlide(3)"
+                            ></span>
+                            <span
+                                class="product__info__color--blanc"
+                                onclick="currentSlide(4)"
+                            ></span>
+                            <span
+                                class="product__info__color--noir"
+                                onclick="currentSlide(5)"
+                            ></span>
+                        </div>
+                    </div>
+                    <div class="product__info__size">
+                        <h3 class="product__info__subtitle">Taille</h3>
+                        <div class="product__info__size__content">
+                            <span>XS</span>
+                            <span>S</span>
+                            <span>M</span>
+                            <span>L</span>
+                            <span>XL</span>
+                        </div>
+                    </div>
+                    <div class="product__info__quantity">
+                        <h3 class="product__info__subtitle">Quantité</h3>
+                        <input type="number" name="" id="" min="1" value="1" />
+                    </div>
+                    <div class="product__info__btn">
+                        <a href="#">
+                            <span>Ajouter au panier </span>
+                        </a>
+                        <ion-icon name="heart-outline"></ion-icon>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ----------dEtails ------------- -->
+
+            <section class="detail container">
+                <div class="detail__container">
+                    <div class="detail__content detail__open">
+                        <div class="detail__question">
+                            <h2 class="detail__title">Description</h2>
+
+                            <ion-icon
+                                name="add-outline"
+                                class="icon--add"
+                            ></ion-icon>
+                            <ion-icon
+                                name="remove-outline"
+                                class="icon--remove"
+                            ></ion-icon>
+                        </div>
+                        <div class="detail__reponse">
+                            <h2>
+                                Maillot Home (Domicile) PRO- Lions Indomptables
+                                One All Sports
+                            </h2>
+                            <p>
+                                Célébrez la coupe du monde Qatar 2022 depuis
+                                votre maison en vous équipant du nouveau maillot
+                                Home (Domicile) PRO de l’équipe nationale de
+                                football du Cameroun. Il fait partie des
+                                maillots récemment confectionnés par le nouvel
+                                équipementier du Cameroun One All Sport pour
+                                faire éprouver aux supporters des Lions
+                                Indomptables depuis leurs domiciles les
+                                meilleurs moments des différents affrontements
+                                de la coupe du monde Qatar 2022.
+                            </p>
+
+                            <p>
+                                Commode et facile à vêtir, ce nouvel maillot One
+                                All sports vous fera vivre en live la meilleure
+                                coupe du monde Qatar 2022 depuis votre maison
+                            </p>
+                            <p>
+                                Commandez en ligne votre Maillot Home (Domicile)
+                                PRO – Vert des Lions Indomptables du Cameroun
+                                aux prix imbattables avec le leader de vente des
+                                maillots authentiques Qatar 2022.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="detail__content detail__close">
+                        <div class="detail__question">
+                            <h2 class="detail__title">Avis</h2>
+                            <ion-icon
+                                name="add-outline"
+                                class="icon--add"
+                            ></ion-icon>
+                            <ion-icon
+                                name="remove-outline"
+                                class="icon--remove"
+                            ></ion-icon>
+                        </div>
+                        <div class="detail__reponse">
+                            <div class="detail__reponse__header">
+                                <p>Jeremy Donfack</p>
+                                <div class="detail__reponse__header--icon">
+                                    <ion-icon name="star"></ion-icon>
+                                    <ion-icon name="star"></ion-icon>
+                                    <ion-icon name="star"></ion-icon>
+                                    <ion-icon name="star"></ion-icon>
+                                    <ion-icon name="star"></ion-icon>
+                                </div>
+                            </div>
+                            <div class="detail__reponse__body">
+                                <p>
+                                    Lorem ipsum dolor, sit amet consectetur
+                                    adipisicing elit. Dignissimos suscipit ab
+                                    impedit nulla, fugit officia totam adipisci
+                                    commodi, vero assumenda repellendus, ullam
+                                    ratione fuga magni ipsam maxime? Ratione,
+                                    obcaecati id Lorem, ipsum dolor sit amet
+                                    consectetur adipisicing elit. Reprehenderit,
+                                    veniam. Officiis, impedit architecto amet
+                                    eaque numquam sequi dolores saepe et
+                                    possimus illo labore? Eligendi in, vitae
+                                    neque sed blanditiis eveniet Lorem ipsum
+                                    dolor sit amet consectetur adipisicing elit.
+                                    Unde expedita rerum natus optio minus libero
+                                    sunt officiis rem quod dignissimos vel et
+                                    saepe amet illo quam, suscipit ipsam
+                                    deserunt neque?
+                                    <br />
+                                    <br />
+                                    03/12/2022
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ----------produits similaires ------------- -->
+            <section class="similarproduct container">
+                <h1 class="detail__title">Produits similaires</h1>
+                <div class="similarproduct__container">
+                    <a href="#" class="similarproduct__item">
+                        <img
+                            src="img/maillot_de_paris_saint_germain.jpg"
+                            alt=""
+                            class="test"
+                        />
+                        <div class="similarproduct__item--text">
+                            <p>Maillot Paris Saint- Germain</p>
+                            <span>39900FCFA</span>
+                        </div>
+                        
+                    </a>
+                    <a href="#" class="similarproduct__item">
+                        <img
+                            src="img/maillot_de_liverpool_de_couleur_rouge.jpg"
+                            alt=""
+                        />
+                        <div class="similarproduct__item--text">
+                            <p>Maillot Liverpool rouge</p>
+                            <span>49900FCFA</span>
+                        </div>
+        
+                    </a>
+                    <a href="#" class="similarproduct__item">
+                        <img
+                            src="img/maillot_du_real_madrid_de_couleur_bleu_.jpg"
+                            alt=""
+                        />
+                        <div class="similarproduct__item--text">
+                            <p>Maillot Real Madrid</p>
+                            <span>39900FCFA</span>
+                        </div>
+                      
+                    </a>
+                    <a href="#" class="similarproduct__item">
+                        <img
+                            src="img/maillotvert.jpg"
+                            alt=""
+                        />
+                        <div class="similarproduct__item--text">
+                            <p>Maillot Lions Indomptables</p>
+                            <span>39900FCFA</span>
+                        </div>
+                      
+                    </a>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <div class="footer__container container">
+                <div class="footer__container__item">
+                    <img src="img/logo11.png" alt="">
+                    <ul class="footer__container__item--text">
+                        <p>Sis à Bali derrière le Krystal</p>
+                        <p>Disponible 24h/24 , 7j/7</p>
+                    </ul>
+                </div>
+                <div class="footer__container__item">
+                    <h3>A propos</h3>
+                    <ul>
+                        <li><a href="#">Qui sommes nous?</a></li>
+                        <li><a href="#">Protocol d’accord VENDOR</a></li>
+                        <li><a href="#">Contactez nous</a></li>
+                        <li><a href="#">Livraison</a></li>
+                    </ul>
+                </div>
+                <div class="footer__container__item">
+                    <h3>Service Client</h3>
+                    <ul>
+                        <li><a href="#">Mon compte</a></li>
+                        <li><a href="#">Suivi de Commande</a></li>
+                        <li><a href="#">Achat à Crédit</a></li>
+                        <li><a href="#">Livraison</a></li>
+                    </ul>
+                </div>
+               
+            </div>
+        </footer>
+        <script
+            type="module"
+            src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+        ></script>
+        <script
+            nomodule
+            src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+        ></script>
+        <script src="app/js/script.js"></script>
+    </body>
+</html>

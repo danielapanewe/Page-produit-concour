@@ -1,0 +1,36 @@
+@use '../util' as *;
+
+.similarproduct {
+    &__container {
+        display: flex;
+        padding-top: 2rem;
+        @include breakpoint-down(mobile) {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+    }
+    &__item {
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+        overflow: hidden;
+        img {
+            width: 80%;
+            align-self: center;
+        }
+        &--text {
+            text-align: center;
+            color: var(--textcolor);
+            p {
+                font-weight: 800;
+            }
+        }
+
+        &:hover {
+            box-shadow: 0 0 10px rgb(0 0 0 / 10%);
+            transform: scale(1.1);
+            transition: all 0.5s;
+        }
+    }
+}

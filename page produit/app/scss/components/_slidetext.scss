@@ -1,0 +1,100 @@
+@use '../util' as *;
+
+.slidetext {
+    width: 100%;
+    height: 7vh;
+    background-color: var(--blueprimary);
+    //background:linear-gradient(to left, #5f9ea09f,powderblue)  ;
+    color: var(--white);
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    padding-top: 0.3rem;
+    padding-bottom: 0.3rem;
+
+    @include breakpoint-down(tablet){
+        height: auto;
+        overflow: hidden;
+    }
+
+    p {
+        display: inline-block;
+        overflow: hidden;
+        white-space: nowrap;
+        font-size: 1.05rem;
+        text-align: center;
+
+        @include breakpoint-down(mobile){
+            display: block;
+        }
+    }
+
+    &__first {
+        animation: appear 6s infinite;
+    }
+
+    &__second {
+        animation: reveal 6s infinite;
+
+        span {
+            animation: slide 6s infinite;
+            color: var(--textcolor);
+            @include breakpoint-down(mobile){
+                animation: normal;
+            }
+        }
+    }
+}
+@keyframes appear {
+    0% {
+        opacity: 0;
+    }
+    20% {
+        opacity: 1;
+    }
+    80% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes slide {
+    0% {
+        margin-left: -100px;
+    }
+    20% {
+        margin-left: -100px;
+    }
+    35% {
+        margin-left: 0px;
+    }
+    100% {
+        margin-left: 0px;
+    }
+}
+
+@keyframes reveal {
+    0% {
+        opacity: 0;
+        width: 0px;
+    }
+    20% {
+        opacity: 1;
+        width: 0px;
+    }
+    30% {
+        width: auto;
+    }
+    80% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        width: auto;
+    }
+}
+.hide{
+    display: none;
+}

@@ -1,0 +1,18 @@
+
+// 639px,800px, 950px,1149px, 1399px, 1500px, 2560px
+$breakpoints-down: (
+	'mobile': '39.9375em',
+	'smalltablet': '50em',
+	'tablet': '59.375em',
+	'medium': '71.8125em',
+	'large': '87.4375em',
+	'xlarge': '93.75em',
+	'extralarge':'160em',
+);
+
+
+@mixin breakpoint-down($size) {
+	@media (max-width: map-get($breakpoints-down, $size)) {
+		@content;
+	}
+}

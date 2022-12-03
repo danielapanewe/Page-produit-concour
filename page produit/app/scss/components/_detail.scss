@@ -1,0 +1,76 @@
+@use '../util' as *;
+.detail{
+    padding-top: 3rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-bottom: 3rem;
+
+    &__description {
+        text-align: center;
+    }
+
+    &__container {
+        display: grid;
+        width: 100%;
+    }
+    &__content {
+        box-shadow: 0 0 10px rgb(0 0 0 / 10%);
+        padding: 1.5rem 1rem;
+    }
+    &__question {
+        font-size: 1.3rem;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        justify-content: space-between;
+        cursor: pointer;
+
+    }
+    &__title{
+        font-size: 1.3rem;
+    }
+    &__reponse {
+        padding: 1.5rem 0 0 1.5rem;
+        flex-direction: column;
+        gap: 1rem;
+        h2{
+            font-size: 1.2rem;
+        }
+
+        &__header{
+            display: flex;
+            justify-content: space-between;
+
+            p{
+                font-weight: 800;
+            }
+
+            &--icon{
+                color: #f89a20c0;
+            }
+        }
+    }
+    .detail__close .detail__reponse {
+        height: 0;
+        overflow: hidden;
+        display: none;
+    }
+    .detail__close .icon--remove{
+        display: none;
+    }
+
+    .detail__open .detail__reponse {
+        height: 0;
+        height: max-content;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+    }
+    .detail__open .icon--add{
+        display: none;
+    }
+    .detail__open {
+        border-top: 0.2rem solid var(--blue);
+    }
+}

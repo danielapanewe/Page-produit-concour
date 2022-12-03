@@ -1,0 +1,258 @@
+@use '../util' as *;
+
+.product {
+    display: grid;
+    grid-template-columns: 0.1fr 0.8fr 1fr;
+    //margin-top: 5rem;
+    position: relative;
+
+    @include breakpoint-down(smalltablet){
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    &__gallery {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        align-self: center;
+        @include breakpoint-down(smalltablet){
+            flex-direction: row;
+            grid-row: 2;
+        }
+
+        &__img {
+            width: 80%;
+            opacity: 0.6;
+            @include breakpoint-down(smalltablet){
+                width: 60%;
+            }
+        }
+
+        .active,
+        &__img:hover {
+            opacity: 1;
+        }
+    }
+
+    &__slider {
+        align-self: center;
+        position: relative;
+        &__item {
+            display: none;
+            position: relative;
+
+            img{
+                width: 100%;
+                animation: float 2s linear infinite alternate;
+            }
+            @keyframes float{
+                from{
+                  transform: translateY(-0.5rem);
+                }
+                to{
+                  transform: translateY(0);
+                }
+              }
+        }
+
+        .btn__prev,
+        .btn__next {
+            cursor: pointer;
+            color: var(--textcolor);
+            position: absolute;
+            user-select: none;
+            bottom: -1rem;
+            top: 60%;
+            transform: translate(-50%,-50%);
+            display: inline-block;
+
+            &:hover {
+                color: var(--blue);
+            }
+        }
+        .btn__next {
+            right: 0;
+        }
+        .btn__prev{
+            left: 0;
+        }
+    }
+
+    &__info {
+        margin-left: 3rem;
+        @include breakpoint-down(smalltablet){
+            margin-left: 0;
+        }
+
+        &__icon {
+            display: flex;
+            gap: 0.2rem;
+
+            ion-icon {
+                color: #f89a20c0;
+                font-size: 0.7rem;
+            }
+        }
+
+        &__title {
+            color: #2d3741ad;
+            text-transform: uppercase;
+            font-size: 2.5rem;
+            font-family: 'Bebas Neue', sans-serif;
+        }
+
+        &__category {
+            display: flex;
+            gap: 2rem;
+            color: var(--textcolor);
+            font-weight: 500;
+            font-size: 0.8rem;
+            margin-top: -0.6rem;
+            font-style: italic;
+            padding-left: 2rem;
+        }
+
+        &__price {
+            :nth-child(1) {
+                font-size: 1.6rem;
+                font-weight: 600;
+            }
+            :nth-child(2) {
+                font-size: 1.4rem;
+                font-weight: 400;
+                color: #ababab;
+                text-decoration: line-through;
+                padding-left: 0.7rem;
+            }
+        }
+
+        &__color {
+            margin-top: 1rem;
+            &__container {
+                display: flex;
+                width: 100%;
+                gap: 0.7rem;
+                padding-top: 0.7rem;
+            }
+            .activecolor{
+                transform: scale(1.2);
+                transition: transform .5s;
+            }
+            span {
+                border-radius: 50%;
+                width: 2rem;
+                height: 2rem;
+                box-shadow: 0 -0.0625rem 4px rgb(0 0 0 / 15%);
+                padding: 0.5rem;
+            }
+            &--rouge {
+                background-color: #d80000e7;
+            }
+            &--blanc {
+                background-color: whitesmoke;
+            }
+            &--jaune {
+                background-color: #ebd40b;
+            }
+            &--noir {
+                background-color: black;
+            }
+            &--vert {
+                background-color: rgb(0, 128, 64);
+            }
+        }
+
+        &__size {
+            margin-top: 1rem;
+            &__content {
+                padding-top: 0.8rem;
+                display: flex;
+                gap: 0.8rem;
+                flex-wrap: wrap;
+            }
+            span {
+                background-color: #e5e5e5;
+                border-radius: 50%;
+                padding: 0.5rem 0.8rem;
+            }
+        }
+
+        &__quantity {
+            margin-top: 1rem;
+            display: flex;
+            gap: 2rem;
+
+            input {
+                width: 6%;
+                height: 1.4rem;
+                align-self:flex-end;
+            }
+        }
+
+        &__btn {
+            margin-top: 2.5rem;
+            
+
+            a {
+                color: var(--textcolor);
+                padding: 1rem 1.5rem;
+                width: 100%;
+                font-size: 1rem;
+                border-radius: 4%;
+                background: linear-gradient(
+                    120deg,
+                    #e5e5e5 30%,
+                    #f0f0f0 38%,
+                    #f0f0f0 40%,
+                    #e5e5e5 48%
+                );
+                background-size: 200% 100%;
+                background-position: 100% 0;
+                animation: move 2s infinite;
+
+                &:hover{
+                    color: var(--blue);
+                }
+            }
+
+            @keyframes move {
+                100% {
+                    background-position: -100% 0%;
+                }
+            }
+
+            ion-icon{
+                font-size: 2rem;
+                vertical-align:middle;
+                color: var(--textcolor);
+                margin-left: 1rem;
+
+                &:hover{
+                    color: var(--blue);
+                }
+            }
+        }
+    }
+}
+
+.backimg{
+    position: absolute;
+    bottom: -2%;
+    right: 0;
+    width: 40%;
+    z-index: -2;
+    transform: translateY(-50%);
+
+    @include breakpoint-down(smalltablet){
+        display: none;
+    }
+}
+.img-magnifier-glass {
+    position: absolute;
+    border: 3px solid #000;
+    cursor: none;
+    width: 5rem;
+    height: 5rem;
+    z-index: 10;
+  }

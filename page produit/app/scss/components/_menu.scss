@@ -1,0 +1,132 @@
+@use '../util' as *;
+
+.header {
+    width: 100%;
+    // box-shadow: 0 -0.0625rem 4px rgb(0 0 0 / 15%);
+    //  background-color: black;
+    &.sticky {
+        box-shadow: 0 -0.0625rem 4px rgb(0 0 0 / 15%);
+        z-index: 1000;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: var(--white);
+    }
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__logo {
+        width: 8%;
+        @include breakpoint-down(mobile) {
+            width: 18%;
+        }
+        // padding-bottom: 0.2rem;
+        //border-radius: 50%;
+    }
+
+    &__nav {
+        @include breakpoint-down(tablet) {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            transform: translateX(-100%);
+            transition: transform 0.7s;
+            background-color: var(--white);
+            z-index: 5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+    .active &__nav {
+        transform: translateX(0);
+    }
+    &__list {
+        display: flex;
+        list-style: none;
+        @include breakpoint-down(tablet) {
+            flex-direction: column;
+            align-items: center;
+            gap: 3rem;
+            padding-left: 0;
+        }
+    }
+
+    &__link {
+        display: inline-block;
+        margin-left: 1.5rem;
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: var(--textcolor);
+        position: relative;
+        padding-bottom: 0.4rem;
+        @include breakpoint-down(tablet) {
+            margin-left: 0;
+            font-size: 1.3rem;
+        }
+    }
+    &__link::after {
+        content: '';
+        width: 0;
+        height: 2px;
+        display: block;
+        background-color: var(--blue);
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 100;
+        transition: all 0.3s;
+        transition: width 0.3s ease-in-out;
+    }
+    &__link:hover::after {
+        width: 50%;
+    }
+
+    &__icon {
+        ion-icon {
+            font-size: 1.5rem;
+            margin-right: 1rem;
+        }
+        ion-icon:hover {
+            color: var(--blue);
+        }
+    }
+
+    .togglemenu {
+        display: none;
+        @include breakpoint-down(tablet) {
+            display: flex;
+            font-size: 2rem;
+            color: var(--textcolor);
+            position: relative;
+            z-index: 20;
+        }
+        &__open {
+            display: block;
+        }
+        &__close {
+            display: none;
+        }
+
+        .active &__open {
+            @include breakpoint-down(tablet) {
+                display: none;
+            }
+        }
+        .active &__close {
+            @include breakpoint-down(tablet) {
+                display: block;
+            }
+        }
+
+        .active .unablescroll {
+            overflow: hidden;
+        }
+    }
+}
